@@ -11,7 +11,7 @@ export class NameFilterPipe implements PipeTransform {
     if(!filterText) return courses;
 
     return courses.filter(c => {
-      return c.name.toLowerCase()
+      return c.title.toLowerCase()
       .includes(filterText.toLowerCase());
     });
   }
