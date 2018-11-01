@@ -6,20 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  courses = [
-    {
-      id: 1,
-      name: "Training",
-      date: "23/04/18",
-      location: "Belfast"
-    }
-  ];
   constructor(private http: HttpClient) { }
+
+  courses;
 
   public getCourses(): void {
     this.http.get<Course[]>('/api/courses')
     .subscribe(data => {
       this.courses = data;
-    });
+      console.log(this.courses);
+    })
   }
 }

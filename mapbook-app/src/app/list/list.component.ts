@@ -17,7 +17,6 @@ export class ListComponent implements OnInit {
     this.data = dataService;
     this.switchboard = switchboard;
     this.data.getCourses();
-    console.log(this.data.courses);
   }
 
   ngOnInit() {
