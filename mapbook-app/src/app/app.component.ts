@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'mapbook-root',
