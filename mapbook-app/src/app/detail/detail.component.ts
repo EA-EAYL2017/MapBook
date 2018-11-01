@@ -13,7 +13,7 @@ import { AppComponent } from '../app.component';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent implements OnInit, OnDestroy {
 
   @Input() course: Course;
   switchboard: SwitchboardService;
