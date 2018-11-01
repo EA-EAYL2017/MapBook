@@ -3,12 +3,14 @@ Used to allow employees to book MAP training courses.
 
 ## DB Setup
 Export the DB connection parameters (application DB user and password):
+To create the DB and overwrite with sample data, run `./setup.sh --seed`.
+If you want to keep existing data, just run `./setup.sh`.
 
 ```
 export DB_USER=map_book
 export DB_PASS=password
 cd db
-./setup.sh
+./setup.sh --seed
 ```
 
 ## Running the application
