@@ -9,9 +9,9 @@ export class DataService {
   courses = [
     {
       id: 1,
-      name: "Training",
-      date: "23/04/18",
-      location: "Belfast"
+      name: 'Training',
+      date: '23/04/18',
+      location: 'Belfast'
     }
   ];
   constructor(private http: HttpClient) { }
