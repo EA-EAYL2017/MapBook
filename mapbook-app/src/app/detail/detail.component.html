@@ -1,19 +1,9 @@
 <div class="detail" *ngIf="course">
   <fieldset>
-    <legend>{{course.name}}</legend>
-    Name: {{course.name}}<br/>
-    Date: {{course.date}}<br/>
+    <legend>{{course.title}}</legend>
+    Name: {{course.title}}<br/>
+    Date: {{course.date | date }}<br/>
     Location: {{course.location}}
+    <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
+    <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
   </fieldset>
-
-
-  <div class="detail" *ngIf="course">
-    <fieldset>
-      <legend>{{course.name}}</legend>
-      Course Name: {{course.name}}<br />
-      Date: {{course.date}}<br />
-      Location: {{course.location}}<br/>
-      <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
-      <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
-    </fieldset>
-  </div>
