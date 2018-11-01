@@ -1,3 +1,19 @@
-<p>
-  detail works!
-</p>
+<div class="detail" *ngIf="course">
+  <fieldset>
+    <legend>{{course.name}}</legend>
+    Name: {{course.name}}<br/>
+    Date: {{course.date}}<br/>
+    Location: {{course.location}}
+  </fieldset>
+
+
+  <div class="detail" *ngIf="course">
+    <fieldset>
+      <legend>{{course.name}}</legend>
+      Course Name: {{course.name}}<br />
+      Date: {{course.date}}<br />
+      Location: {{course.location}}<br/>
+      <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
+      <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
+    </fieldset>
+  </div>

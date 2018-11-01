@@ -22,4 +22,12 @@ export class DataService {
       this.courses = data;
     });
   }
+
+  public deleteCourse(oldCourse: Course): void {
+    this.courses = this.http.delete<Course[]>('/api/course/' + oldCourse.id);
+  }
+
+  public updateCourse(courseToUpdate: Course): void {
+    this.courses = this.http.put<Course[]>('/api/employee/' + courseToUpdate.id, courseToUpdate);
+  }
 }
