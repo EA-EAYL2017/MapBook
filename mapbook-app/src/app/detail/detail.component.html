@@ -3,7 +3,10 @@
     <legend>{{course.title}}</legend>
     Name: {{course.title}}<br/>
     Date: {{course.date | date }}<br/>
-    Location: {{course.location}}
+    Location: {{course.location}}<br/>
+    Description: {{course.description}}<br/>
+    Target Audience: {{course.target_audience}}<br/>
+    Duration: {{course.duration}}<br/>
     <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
     <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
   </fieldset>
