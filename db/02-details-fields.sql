@@ -3,9 +3,9 @@
 
 USE MapBook;
 
-ALTER TABLE Courses ADD description VARCHAR(600); 
-ALTER TABLE Courses ADD target_audience VARCHAR(75); 
-ALTER TABLE Courses ADD duration VARCHAR(15); 
+ALTER TABLE Courses ADD description VARCHAR(600);
+ALTER TABLE Courses ADD target_audience VARCHAR(75);
+ALTER TABLE Courses ADD duration VARCHAR(15);
 
 CREATE TABLE IF NOT EXISTS Course_Trainer (
     course_id INT NOT NULL,
