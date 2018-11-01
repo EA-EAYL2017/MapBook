@@ -17,7 +17,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   public getCourses(): void {
-    this.http.get<Course[]>('/courses')
+    this.http.get<Course[]>('/api/courses')
     .subscribe(data => {
       this.courses = data;
     });
