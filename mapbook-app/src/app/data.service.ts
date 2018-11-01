@@ -23,6 +23,6 @@ export class DataService {
   }
 
   public updateCourse(courseToUpdate: Course): void {
-    this.courses = this.http.put<Course[]>('/api/employee/' + courseToUpdate.id, courseToUpdate);
+    this.courses = this.http.put<Course[]>('/api/course/' + courseToUpdate.id, courseToUpdate);
   }
 }
