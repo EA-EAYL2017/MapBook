@@ -16,26 +16,9 @@ import { AppComponent } from '../app.component';
 export class DetailComponent implements OnInit {
 
   @Input() course: Course;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
-
-
-@Component({
-  selector: 'employee-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
-})
-export class DetailComponent implements OnInit {
-
-  @Input() employee: Employee;
   switchboard: SwitchboardService;
   dataService: DataService;
   app: AppComponent;
-
 
   constructor(switchboard: SwitchboardService, dataService: DataService, app: AppComponent) {
     this.switchboard = switchboard;
@@ -43,23 +26,23 @@ export class DetailComponent implements OnInit {
     this.app = app;
   }
 
-  subEmployee: Subscription;
+  subCourse: Subscription;
   ngOnInit(): void {
-    this.subEmployee = this.switchboard.employee$.subscribe((c) => {
-      this.employee = c;
+    this.subCourse = this.switchboard.course$.subscribe((c) => {
+      this.course = c;
     });
   }
 
   ngOnDestroy(): void {
-    this.subEmployee.unsubscribe();
+    this.subCourse.unsubscribe();
   }
 
-  delete(oldEmployee: Employee): void{
-    this.dataService.deleteEmployee(oldEmployee);
-    this.employee = null;
+  delete(oldCourse: Course): void {
+    this.dataService.deleteCourse(oldCourse);
+    this.course = null;
   }
 
-  openForm(): void{
+  openForm(): void {
     this.app.openForm();
   }
 }
