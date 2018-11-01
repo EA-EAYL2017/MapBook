@@ -8,10 +8,10 @@ import { Subject } from 'rxjs';
 export class SwitchboardService {
 
   private courseWatcher = new Subject<Course>();
-  public city$ = this.courseWatcher.asObservable();
+  public course$ = this.courseWatcher.asObservable();
 
-  public switchCourse(course: Course){
-    if(course){
+  public switchCourse(course: Course) {
+    if(course) {
       this.courseWatcher.next(course);
     }
   }
