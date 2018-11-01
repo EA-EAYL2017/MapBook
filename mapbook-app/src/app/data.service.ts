@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
+<<<<<<< HEAD
   courses = [
     {
       id: 1,
@@ -14,13 +15,18 @@ export class DataService {
       location: 'Belfast'
     }
   ];
+=======
+>>>>>>> d3da73cf74b9a60c6a03610d233989708bf4a356
   constructor(private http: HttpClient) { }
 
+  courses;
+
   public getCourses(): void {
-    this.http.get<Course[]>('/courses')
+    this.http.get<Course[]>('/api/courses')
     .subscribe(data => {
       this.courses = data;
-    });
+      console.log(this.courses);
+    })
   }
 
   public deleteCourse(oldCourse: Course): void {

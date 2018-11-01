@@ -3,13 +3,14 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  </div>
-<div class="list">
-  <h2>courses</h2>>
-  <ul>
-      <li *ngFor='let course of courses'(click)="onSelect(course)">{{course.name}}</li>
-  </ul>
+ </div>
+<div class="container">
+  <ngb-tabset #tabs>
+    <ngb-tab title="Course List">
+      <ng-template ngbTabContent>
+        <mapbook-list></mapbook-list>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
   </div>
 
-<mapbook-list></mapbook-list>
-<mapbook-detail [course] = "thisCourse"></mapbook-detail>
