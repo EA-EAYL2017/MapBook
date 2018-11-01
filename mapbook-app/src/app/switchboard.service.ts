@@ -11,7 +11,7 @@ export class SwitchboardService {
   public course$ = this.courseWatcher.asObservable();
 
   public switchCourse(course: Course) {
-    if (course) {
+    if(course) {
       this.courseWatcher.next(course);
     }
   }
