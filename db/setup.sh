@@ -3,6 +3,7 @@ if [[ $* == *--seed* ]]; then
 fi
 
 sudo mysql -e "set @username='${DB_USER}';set @password='${DB_PASS}';source 01-db-setup.sql;"
+sudo mysql -e "set @username='${DB_USER}';set @password='${DB_PASS}';source 02-details-fields.sql;"
 echo DB Setup Complete!
 
 if [[ $* == *--seed* ]]; then
