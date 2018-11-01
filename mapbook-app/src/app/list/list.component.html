@@ -1,0 +1,7 @@
+<div class="list">
+  <h2>Courses</h2>
+  <input [(ngModel)]='filterText' placeholder="Filter" class="form-control"/>
+  <ul>
+    <li *ngFor="let course of data.courses" (click)='onSelect(course)'>{{course.title}}</li>
+  </ul>
+</div>
