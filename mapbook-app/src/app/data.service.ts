@@ -9,10 +9,10 @@ export class DataService {
   courses;
   constructor(private http: HttpClient) { }
 
-  public getCourses(): void{
+  public getCourses(): void {
     this.http.get<Course[]>('/courses')
     .subscribe(data => {
       this.courses = data;
-    })
+    });
   }
 }
