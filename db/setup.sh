@@ -1,5 +1,5 @@
 if [[ $* == *--seed* ]]; then
-	sudo mysql -e "drop database MapBook;"
+	sudo mysql -e "drop database if exists MapBook;"
 fi
 
 sudo mysql -e "set @username='${DB_USER}';set @password='${DB_PASS}';source 01-db-setup.sql;"
