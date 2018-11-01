@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -8,4 +8,12 @@ import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   title = 'mapbook-app';
+
+  @ViewChild('tabs')
+  private tabs: NgbTabset;
+
+  openForm(): void {
+    console.log(this.tabs);
+    this.tabs.select('ngb-tab-2');
+  }
 }
