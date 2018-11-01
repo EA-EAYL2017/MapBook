@@ -13,14 +13,14 @@ db.connect(function(err) {
 })
 exports.getCourses = function(callback) {
     db.query(
-        "SELECT * FROM Courses ORDER BY name ASC",
+        "SELECT * FROM Courses ORDER BY title ASC",
         function(err, rows) {
             if (err) throw err;
             callback(rows);
         }
     );
 }
-exports.getCourses = function(id, callback) {
+exports.getCourse = function(id, callback) {
     db.query(
         "SELECT * FROM Courses WHERE id = ?",
         [id],
