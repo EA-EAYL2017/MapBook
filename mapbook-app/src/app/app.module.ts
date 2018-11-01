@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
     NameFilterPipe
   ],
   imports: [
