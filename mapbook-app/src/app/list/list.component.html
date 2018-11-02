@@ -1,6 +1,6 @@
 <div class="list">
   <h2 id="title">Courses</h2>
-  <input [(ngModel)]='filterText' placeholder="Filter" class="form-control"/>
+  <input id="filter" [(ngModel)]='filterText' placeholder="Filter" class="form-control"/>
   <ul>
     <li id="item" *ngFor="let course of data.courses|nameFilter:filterText" (click)='onSelect(course)'>
       {{course.title}}
