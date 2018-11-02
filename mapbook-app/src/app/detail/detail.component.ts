@@ -12,6 +12,7 @@ import { AddEmployeeToCourseComponent } from '../add-employee-to-course/add-empl
 @Component({
   selector: 'mapbook-detail',
   templateUrl: './detail.component.html',
+  //providers: AddEmployeeToCourseComponent,
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit, OnDestroy {
@@ -45,16 +46,10 @@ export class DetailComponent implements OnInit, OnDestroy {
     this.course = null;
   }
 
-  openForm(): void {
-    this.app.openForm();
-  }
-
   @ViewChild('tabs')
   private tabs:NgbTabset;
 
   applyToJoin(selectedCourseId: number) {
-    console.log('got clicked    ' + selectedCourseId);
-    this.addEmployee.sendData(selectedCourseId);
-    this.tabs.select('ngb-tab-1');
+    this.app.applyToJoin(selectedCourseId);
   }
 }

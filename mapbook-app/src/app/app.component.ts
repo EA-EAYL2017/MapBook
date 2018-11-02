@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
+import { AddEmployeeToCourseComponent } from './add-employee-to-course/add-employee-to-course.component';
 
 @Component({
   selector: 'mapbook-root',
@@ -11,9 +12,15 @@ export class AppComponent {
 
   @ViewChild('tabs')
   private tabs: NgbTabset;
+  addEmployee: AddEmployeeToCourseComponent;
 
-  openForm(): void {
-    console.log(this.tabs);
-    this.tabs.select('ngb-tab-2');
+  constructor(addEmployee: AddEmployeeToCourseComponent){
+    this.addEmployee = addEmployee;
+  }
+
+  applyToJoin(selectedCourseId: number) {
+    console.log('got clicked    ' + selectedCourseId);
+    this.addEmployee.sendData(selectedCourseId);
+    this.tabs.select('ngb-tab-1');
   }
 }
