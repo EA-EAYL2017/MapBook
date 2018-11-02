@@ -1,9 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 .detail {
   text-align: left;
-  color: maroon;
   position: fixed;
   right: 30px;
   top: 100px;
   max-width: 500px;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto,"Helvetica Neue";
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }

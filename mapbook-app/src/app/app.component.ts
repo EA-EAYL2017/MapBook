@@ -8,7 +8,7 @@ import { AddEmployeeToCourseComponent } from './add-employee-to-course/add-emplo
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mapbook-app';
+  title = 'MAP Book';
 
   @ViewChild('tabs')
   private tabs: NgbTabset;
