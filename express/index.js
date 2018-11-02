@@ -4,7 +4,6 @@ app.use(express.json());
 const db = require("./db.js");
 
 courses = [];
-employees = [];
 
 function updateCourses(callback) {
     db.getCourses(function(rows) {
