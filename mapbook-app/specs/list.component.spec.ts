@@ -1,31 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListComponent } from '../src/app/list/list.component';
-import { browser } from 'protractor';
+import { browser, element, by } from 'protractor';
 
-describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
+fdescribe('ListComponent', () => {
   it('should be present on the page', () => {
     browser.get('http://localhost:8001');
-    expect(component.getTitle()).toEqual("Courses")
-  })
+    expect(element(by.id('title')).getText()).toEqual("Courses");
+  });
 });
