@@ -45,4 +45,8 @@ export class DetailComponent implements OnInit, OnDestroy {
   openForm(): void {
     this.app.openForm();
   }
+
+  applyToJoin(selectedCourseId: number) {
+    console.log('got clicked    ' + selectedCourseId);
+  }
 }
