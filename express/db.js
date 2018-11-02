@@ -61,3 +61,22 @@ exports.deleteCourse = function(id, ready) {
         }
     );
 }
+exports.getEmployees = function(callback) {
+    db.query(
+        "SELECT * FROM Course_Employee",
+        function(err, rows) {
+            if (err) throw err;
+            callback(rows);
+        }
+    );
+}
+exports.addEmployee = function(data, ready) {
+    db.query(
+        "INSERT INTO Course_Employee SET ?",
+        data, 
+        function(err, results, fields) {
+            if (err) throw err;
+            ready(results.insertId);
+        }
+    );
+}
