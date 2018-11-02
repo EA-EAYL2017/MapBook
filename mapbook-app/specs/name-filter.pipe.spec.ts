@@ -7,4 +7,13 @@ describe('NameFilterPipe', () => {
     element(by.id('filter')).sendKeys('App');
     expect(element(by.id('item')).getText()).toContain("Apprentice");
   });
+<<<<<<< Updated upstream
+=======
+
+  it('shouldnt find result for negative search term', () => {
+    browser.get('http://localhost:8001');
+    element(by.id('filter')).sendKeys('App');
+    expect(element(by.id('item')).getText()).not.toContain("Consultant");
+  });
+>>>>>>> Stashed changes
 });
