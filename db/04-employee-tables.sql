@@ -3,6 +3,6 @@
 
 USE MapBook;
 
-DROP TABLE Course_Employee;
+DROP TABLE Course_Trainer;
 
 ALTER TABLE Courses ADD trainer_name VARCHAR(30);
