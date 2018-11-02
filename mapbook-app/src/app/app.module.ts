@@ -26,7 +26,7 @@ import { AddEmployeeToCourseComponent } from './add-employee-to-course/add-emplo
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AddEmployeeToCourseComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

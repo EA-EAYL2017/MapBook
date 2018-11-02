@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class AddEmployeeToCourseComponent implements OnInit {
 
-  public newCourse: Course;
+  public newCourseId: number;
   public newEmployee: Employee;
   data: DataService;
 
@@ -23,8 +23,10 @@ export class AddEmployeeToCourseComponent implements OnInit {
   }
   
   addEmployeeToCourse(): void {
-    var employeeToAdd = this.newEmployee;
-    this.newEmployee = new Employee();
-    this.data.addEmployeeToCourse(this.newCourse, employeeToAdd);
+    this.data.addEmployeeToCourse
+  }
+
+  sendData(selectedCourseId: number): void {
+    this.newCourseId = selectedCourseId;
   }
 }
