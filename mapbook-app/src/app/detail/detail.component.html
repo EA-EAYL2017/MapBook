@@ -1,10 +1,10 @@
 <div class="detail" *ngIf="course">
-  <fieldset>
+  <fieldset id="detail">
     <legend>{{course.title}}</legend>
     Name: {{course.title}}<br/>
     Date: {{course.date | date: 'dd/MM/yyyy' }}<br/>
     Location: {{course.location}}<br/>
-    {{course.description}}<br/>
+    Description: {{course.description}}<br/>
     Target Audience: {{course.target_audience}}<br/>
     Duration: {{course.duration}}<br/>
     Trainer: {{course.trainer}}<br/>
