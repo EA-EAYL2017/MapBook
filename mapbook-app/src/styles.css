@@ -3,4 +3,7 @@
   text-align: left;
   color: maroon;
   position: fixed;
+  right: 30px;
+  top: 100px;
+  max-width: 500px;
 }
