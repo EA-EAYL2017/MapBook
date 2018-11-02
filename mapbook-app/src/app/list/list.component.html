@@ -4,7 +4,7 @@
   <ul>
     <li id="item" *ngFor="let course of data.courses|nameFilter:filterText" (click)='onSelect(course)'>
       {{course.title}}
-      <p>{{course.date | date}} | {{course.location}}</p>
+      <p>{{course.date | date: 'dd/MM/yyyy'}} | {{course.location}}</p>
     </li>
   </ul>
 </div>

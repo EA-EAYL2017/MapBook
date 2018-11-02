@@ -1,13 +1,15 @@
 <div class="detail" *ngIf="course">
-  <fieldset>
+  <fieldset id="detail">
     <legend>{{course.title}}</legend>
     Name: {{course.title}}<br/>
-    Date: {{course.date | date }}<br/>
+    Date: {{course.date | date: 'dd/MM/yyyy' }}<br/>
     Location: {{course.location}}<br/>
     Description: {{course.description}}<br/>
     Target Audience: {{course.target_audience}}<br/>
     Duration: {{course.duration}}<br/>
     Trainer: {{course.trainer_name}}<br/>
-    <button id="update" type="button" class="btn btn-primary" (click)="openForm()">Update</button>
-    <button id="delete" type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
+    <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button> -->
+    <button id="apply" type="button" class="btn btn-primary" (click)="applyToJoin(course.id)">Apply to Course</button>
   </fieldset>
+</div>
