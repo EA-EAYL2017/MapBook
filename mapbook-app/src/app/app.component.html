@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
- </div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="/assets/kainos-map.png"/>
+    <span>{{ title }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div class="container">
   <ngb-tabset #tabs>
     <ngb-tab title="Course List">
@@ -18,5 +19,4 @@
       </ng-template>
     </ngb-tab>
   </ngb-tabset>
-  </div>
-
+</div>

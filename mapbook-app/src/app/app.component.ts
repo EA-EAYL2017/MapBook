@@ -7,7 +7,7 @@ import { NgbModule, NgbTabset } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mapbook-app';
+  title = 'MAP Book';
 
   @ViewChild('tabs')
   private tabs: NgbTabset;
