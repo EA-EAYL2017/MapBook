@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SwitchboardService } from './switchboard.service';
+import { SwitchboardService } from '../src/app/switchboard.service';
 
 describe('SwitchboardService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
