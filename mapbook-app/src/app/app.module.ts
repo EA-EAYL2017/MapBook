@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { NameFilterPipe } from './name-filter.pipe';
+import { AddEmployeeToCourseComponent } from './add-employee-to-course/add-employee-to-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     DetailComponent,
-    NameFilterPipe
+    NameFilterPipe,
+    AddEmployeeToCourseComponent
   ],
   imports: [
     BrowserModule,
