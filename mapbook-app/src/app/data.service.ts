@@ -28,7 +28,7 @@ export class DataService {
     this.courses = this.http.put<Course[]>('/api/course/' + courseToUpdate.id, courseToUpdate);
   }
 
-  public addEmployeeToCourse(selectedCourse: Course, employee: Employee): void {
-    this.employees.push(selectedCourse, employee);
+  public addEmployeeToCourse(selectedCourseId: number, employee: Employee): void {
+    this.http.post<Employee[]>('/api/course/:id/book',selectedCourseId, employee);
   }
 }
