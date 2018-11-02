@@ -15,6 +15,14 @@ export class DataService {
     .subscribe(data => {
       this.courses = data;
       console.log(this.courses);
-    })
+    });
+  }
+
+  public deleteCourse(oldCourse: Course): void {
+    this.courses = this.http.delete<Course[]>('/api/course/' + oldCourse.id);
+  }
+
+  public updateCourse(courseToUpdate: Course): void {
+    this.courses = this.http.put<Course[]>('/api/course/' + courseToUpdate.id, courseToUpdate);
   }
 }

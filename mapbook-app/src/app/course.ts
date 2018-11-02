@@ -3,4 +3,7 @@ export class Course {
     title: string;
     date: string;
     location: string;
+    description: string;
+    target_audience: string;
+    duration: string;
 }
