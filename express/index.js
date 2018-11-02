@@ -49,8 +49,8 @@ app.delete("/course/:id", function (req, res) {
     });
 });
 
-app.post("/course/:id/book", function (req, res) {
-    db.addEmployee(req.params.id, function(employee) {
+app.post("/course/:id/:name/:email", function (req, res) {
+    db.addEmployee(req.params.id,req.params.name,req.params.email, function(employee) {
         res.send(employee);
     });
 });

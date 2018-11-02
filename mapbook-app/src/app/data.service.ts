@@ -29,6 +29,6 @@ export class DataService {
   }
 
   public addEmployeeToCourse(selectedCourseId: number, employee: Employee): void {
-    this.http.post<Employee[]>('/api/course/:id/book',selectedCourseId, employee.name, employee.email);
+    this.http.post<Employee[]>('/api/course/'+ selectedCourseId +"/" +employee.name +"/" +employee.email, employee);
   }
 }
