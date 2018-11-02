@@ -2,7 +2,7 @@
   <fieldset>
     <legend>{{course.title}}</legend>
     Name: {{course.title}}<br/>
-    Date: {{course.date | date }}<br/>
+    Date: {{course.date | date: 'dd/MM/yyyy' }}<br/>
     Location: {{course.location}}<br/>
     {{course.description}}<br/>
     Target Audience: {{course.target_audience}}<br/>
