@@ -13,6 +13,7 @@ describe('DetailComponent', () => {
 
   it('Should have headers', () => {
     browser.get('http://localhost:8001');
+    element(by.id('item')).click();
     expect(element(by.id('detail')).getText()).toContain("Name:");
     expect(element(by.id('detail')).getText()).toContain("Date:");
     expect(element(by.id('detail')).getText()).toContain("Location:");
