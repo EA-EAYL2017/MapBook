@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
-    "test": "ng test",
+    "tsc": "tsc",
+    "pretest": "npm run tsc",
+    "test": "protractor dist/out-tsc/conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -45,9 +47,9 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.4.0",
+    "protractor": "^4.0.14",
     "ts-node": "^7.0.1",
     "tslint": "~5.11.0",
-    "typescript": "^3.1.5"
+    "typescript": "^3.1.6"
   }
 }

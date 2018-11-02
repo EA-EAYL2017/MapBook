@@ -1,4 +1,4 @@
-import { NameFilterPipe } from './name-filter.pipe';
+import { NameFilterPipe } from '../src/app/name-filter.pipe';
 
 describe('NameFilterPipe', () => {
   it('create an instance', () => {

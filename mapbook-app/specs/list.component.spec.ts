@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListComponent } from './list.component';
+import { ListComponent } from '../src/app/list/list.component';
 import { browser } from 'protractor';
 
 describe('ListComponent', () => {
