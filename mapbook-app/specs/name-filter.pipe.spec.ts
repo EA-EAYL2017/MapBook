@@ -12,11 +12,5 @@ describe('NameFilterPipe', () => {
     browser.get('http://localhost:8001');
     element(by.id('filter')).sendKeys('Awfwfwef');
     expect(element(by.id('item'))).toBeUndefined();
-  })
-
-  it('shouldnt contain wrong results', () => {
-    browser.get('http://localhost:8001');
-    element(by.id('filter')).sendKeys('App');
-    expect(element(by.id('item')).getText()).not.toContain("Consultant");
   });
 });
