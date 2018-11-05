@@ -16,14 +16,14 @@ EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 
 -- Add application user
-SET @query1 = CONCAT('CREATE USER "',@username,'"@"localhost" IDENTIFIED BY "',@password,'" ');
+SET @query1 = CONCAT('CREATE USER "',@username,'"@"localhost" IDENTIFIED WITH mysql_native_password BY "',@password,'" ');
 PREPARE stmt FROM @query1;
 EXECUTE stmt;
 DEALLOCATE PREPARE stmt;
 
 SET @query1 = CONCAT(
 	'GRANT SELECT,INSERT ON MapBook.* TO "',@username,
-    '"@"localhost" IDENTIFIED BY "',@password,'"'
+    '"@"localhost"'
 );
 PREPARE stmt FROM @query1;
 EXECUTE stmt;

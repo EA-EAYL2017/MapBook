@@ -6,4 +6,5 @@ export class Course {
     description: string;
     target_audience: string;
     duration: string;
+    trainer_name: string;
 }

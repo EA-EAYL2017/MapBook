@@ -7,10 +7,12 @@ import { SwitchboardService } from '../switchboard.service';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 import { AppComponent } from '../app.component';
+import { AddEmployeeToCourseComponent } from '../add-employee-to-course/add-employee-to-course.component';
 
 @Component({
   selector: 'mapbook-detail',
   templateUrl: './detail.component.html',
+  //providers: AddEmployeeToCourseComponent,
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit, OnDestroy {
@@ -19,11 +21,13 @@ export class DetailComponent implements OnInit, OnDestroy {
   switchboard: SwitchboardService;
   dataService: DataService;
   app: AppComponent;
+  addEmployee: AddEmployeeToCourseComponent;
 
-  constructor(switchboard: SwitchboardService, dataService: DataService, app: AppComponent) {
+  constructor(switchboard: SwitchboardService, dataService: DataService, app: AppComponent, addEmployee: AddEmployeeToCourseComponent) {
     this.switchboard = switchboard;
     this.dataService = dataService;
     this.app = app;
+    this.addEmployee = addEmployee;
   }
 
   subCourse: Subscription;
@@ -42,7 +46,10 @@ export class DetailComponent implements OnInit, OnDestroy {
     this.course = null;
   }
 
-  openForm(): void {
-    this.app.openForm();
+  @ViewChild('tabs')
+  private tabs:NgbTabset;
+
+  applyToJoin(selectedCourseId: number) {
+    this.app.applyToJoin(selectedCourseId);
   }
 }

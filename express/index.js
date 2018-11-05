@@ -4,6 +4,7 @@ app.use(express.json());
 const db = require("./db.js");
 
 courses = [];
+employees = [];
 
 function updateCourses(callback) {
     db.getCourses(function(rows) {
@@ -45,6 +46,12 @@ app.delete("/course/:id", function (req, res) {
         updateCourses(function() {
             res.send(courses);
         });
+    });
+});
+
+app.post("/course/:id/:name/:email", function (req, res) {
+    db.addEmployee(req.params.id,req.params.name,req.params.email, function(employee) {
+        res.send(employee);
     });
 });
 

@@ -1,7 +1,12 @@
 <div class="list">
-  <h2>Courses</h2>
-  <input [(ngModel)]='filterText' placeholder="Filter" class="form-control"/>
+  <h2 id="title">Courses</h2>
+  <mat-form-field>
+    <input matInput id="filter" [(ngModel)]='filterText' placeholder="Filter" class="form-control" />
+  </mat-form-field>
   <ul>
-    <li *ngFor="let course of data.courses" (click)='onSelect(course)'>{{course.title}}</li>
+    <li id="item" *ngFor="let course of data.courses|nameFilter:filterText" (click)='onSelect(course)'>
+      <b>{{course.title}}</b>
+      <p>{{course.date | date: 'dd/MM/yyyy'}} | {{course.location}}</p>
+    </li>
   </ul>
 </div>

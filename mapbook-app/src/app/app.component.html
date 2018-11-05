@@ -1,17 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
- </div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img src="/assets/kainos-map.png"/>
+    <span>{{ title }}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div class="container">
-  <ngb-tabset #tabs>
+  <ngb-tabset (tabChange)="beforeChange($event)" #tabs>
     <ngb-tab title="Course List">
       <ng-template ngbTabContent>
         <mapbook-list></mapbook-list>
         <mapbook-detail></mapbook-detail>
       </ng-template>
     </ngb-tab>
+    <ngb-tab id="tab2" hidden="true">
+      <ng-template ngbTabContent>
+        <mapbook-add-employee-to-course></mapbook-add-employee-to-course>
+      </ng-template>
+    </ngb-tab>
   </ngb-tabset>
-  </div>
-
+</div>

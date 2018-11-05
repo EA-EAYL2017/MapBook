@@ -1,12 +1,15 @@
 <div class="detail" *ngIf="course">
-  <fieldset>
+  <fieldset id="detail">
     <legend>{{course.title}}</legend>
-    Name: {{course.title}}<br/>
-    Date: {{course.date | date }}<br/>
-    Location: {{course.location}}<br/>
-    Description: {{course.description}}<br/>
-    Target Audience: {{course.target_audience}}<br/>
-    Duration: {{course.duration}}<br/>
-    <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
-    <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button>
+    <div><b>Name:</b> {{course.title}}</div>
+    <div><b>Date:</b> {{course.date | date: 'dd/MM/yyyy' }}</div>
+    <div><b>Location:</b> {{course.location}}</div>
+    <div><b>Description:</b> {{course.description}}</div>
+    <div><b>Target Audience:</b> {{course.target_audience}}</div>
+    <div><b>Duration:</b> {{course.duration}}</div>
+    <div><b>Trainer:</b> {{course.trainer_name}}</div>
+    <!-- <button type="button" class="btn btn-primary" (click)="openForm()">Update</button>
+    <button type="button" class="btn btn-danger" (click)="delete(course)">Delete</button> -->
+    <button id="apply" type="button" class="btn btn-primary" (click)="applyToJoin(course.id)">Apply to Course</button>
   </fieldset>
+</div>

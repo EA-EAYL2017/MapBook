@@ -13,7 +13,7 @@ db.connect(function(err) {
 })
 exports.getCourses = function(callback) {
     db.query(
-        "SELECT * FROM Courses ORDER BY title ASC",
+        "SELECT * FROM Courses ORDER BY date, title",
         function(err, rows) {
             if (err) throw err;
             callback(rows);
@@ -58,6 +58,25 @@ exports.deleteCourse = function(id, ready) {
         function(err, results, fields) {
             if (err) throw err;
             ready();
+        }
+    );
+}
+exports.getEmployees = function(callback) {
+    db.query(
+        "SELECT * FROM Course_Employee",
+        function(err, rows) {
+            if (err) throw err;
+            callback(rows);
+        }
+    );
+}
+exports.addEmployee = function(data, ready) {
+    db.query(
+        "INSERT INTO Course_Employee SET ?",
+        data, 
+        function(err, results, fields) {
+            if (err) throw err;
+            ready(results.insertId);
         }
     );
 }
